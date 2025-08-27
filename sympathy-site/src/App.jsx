@@ -35,7 +35,7 @@ function App() {
                              p-6 transition-transform transform hover:scale-105"
                     >
                         <div className="p-6">
-                            <p className="italic text-gray-700 mb-4">“{row["Your Message:"]}”</p>
+                            <p className="italic text-gray-700 mb-4">{row["Your Message:"]}</p>
                             <p className="text-2xl text-right text-blue-900 mt-2 font-[Dancing_Script]">— {row["Your Name (Signature):"]}</p>
                         </div>
                     </div>
