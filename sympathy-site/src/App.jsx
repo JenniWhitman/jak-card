@@ -20,19 +20,22 @@ function App() {
 
     return (
         <div className="min-h-screen w-full bg-gray-100 text-gray-800 flex flex-col items-center py-10 px-4">
-            <h1 className="text-5xl text-center text-blue-900 mb-8 font-[Dancing_Script]">
+            <h1 className="text-5xl text-center text-[#0b3d91] mb-8 font-[Dancing_Script]">
                 Sending all our love
             </h1>
 
             {/* Sympathy Messages */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl px-4">
+            <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {messages.map((row, i) => (
                     <div
                         key={i}
-                        className="shadow-md bg-white/90 border-l-4 border-gray-400 rounded-xl"
+                        className="bg-gradient-to-b from-[#fdfdfd] to-[#f7f7f7]
+                             border-l-4 border-[#c0c4c8] rounded-2xl
+                             shadow-lg shadow-gray-300/30
+                             p-6 transition-transform transform hover:scale-105"
                     >
-                        <div className="p-4">
-                            <p className="italic text-gray-700">“{row["Your Message:"]}”</p>
+                        <div className="p-6">
+                            <p className="italic text-gray-700 mb-4">“{row["Your Message:"]}”</p>
                             <p className="text-2xl text-right text-blue-900 mt-2 font-[Dancing_Script]">— {row["Your Name (Signature):"]}</p>
                         </div>
                     </div>
@@ -43,7 +46,7 @@ function App() {
                 {/* Toggle Button */}
                 <button
                     onClick={() => setShowCarousel(!showCarousel)}
-                    className="mb-6 px-4 py-2 rounded-lg bg-gray-600 text-white shadow hover:bg-gray-700 transition"
+                    className="mb-8 px-5 py-2 rounded-lg bg-[#0b3d91] text-white shadow hover:bg-[#0d47a1] transition"
                 >
                     {showCarousel ? "Hide Memories" : "Show Memories"}
                 </button>
@@ -53,7 +56,7 @@ function App() {
 
             {/* Image Carousel */}
             {showCarousel && (
-            <div className="w-full max-w-2xl mb-8 shadow-lg rounded-2xl overflow-hidden">
+            <div className="w-full max-w-3xl mx-auto mb-10 shadow-lg rounded-2xl overflow-hidden">
                 <Carousel
                     autoPlay
                     infiniteLoop
